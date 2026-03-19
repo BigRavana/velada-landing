@@ -15,11 +15,11 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "La Velada del Año V | Evento Presencial y Streaming",
+  title: "Combate Final V | Evento Presencial y Streaming",
   description:
-    "El evento de entretenimiento más grande del año. Compra tus entradas o streaming para La Velada del Año V. 15 de Junio 2026 en el Estadio Metropolitano, Madrid.",
+    "El evento de entretenimiento más grande del año. Compra tus entradas o streaming para Combate Final V. 15 de Junio 2026 en el Estadio Metropolitano, Madrid.",
   keywords: [
-    "La Velada",
+    "Combate Final",
     "evento",
     "boxeo",
     "streaming",
@@ -27,19 +27,19 @@ export const metadata: Metadata = {
     "Madrid",
     "2026",
   ],
-  authors: [{ name: "La Velada" }],
+  authors: [{ name: "Combate Final" }],
   openGraph: {
-    title: "La Velada del Año V | Evento Presencial y Streaming",
+    title: "Combate Final V | Evento Presencial y Streaming",
     description:
       "El evento de entretenimiento más grande del año. Compra tus entradas o streaming.",
-    url: "https://lavelada.com",
-    siteName: "La Velada",
+    url: "https://combatefinal.com",
+    siteName: "Combate Final",
     locale: "es_ES",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "La Velada del Año V",
+    title: "Combate Final V",
     description: "El evento de entretenimiento más grande del año.",
   },
   robots: {

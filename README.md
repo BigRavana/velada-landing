@@ -1,11 +1,11 @@
-# La Velada del Año V - Landing Page
+# Combate Final V - Landing Page
 
 > High-performance landing page para evento masivo de entretenimiento.
 > Optimizada para picos de tráfico con métricas Lighthouse >90.
 
 ## Demo
 
-[Ver proyecto en vivo](https://velada-landing.vercel.app)
+[Ver proyecto en vivo](https://combatefinal-landing.vercel.app)
 
 ## Features
 

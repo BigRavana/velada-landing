@@ -22,7 +22,7 @@ export function FightersSection({ fighters }: FightersSectionProps) {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-black mb-4">
             <span className="bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-              Participantes
+              Luchadores
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -68,7 +68,7 @@ function FighterCard({ fighter, priority = false }: FighterCardProps) {
       {fighter.isMainEvent && (
         <div className="absolute top-3 left-3">
           <span className="px-2 py-1 text-xs font-bold bg-neon-pink rounded-full animate-pulse">
-            MAIN EVENT
+            COMBATE PRINCIPAL
           </span>
         </div>
       )}
