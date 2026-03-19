@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/BigRavana/velada-landing/compare/v1.0.0...v1.0.1) (2026-03-19)
+
+
+### Bug Fixes
+
+* restore Unsplash images for fighters and merch ([16e6917](https://github.com/BigRavana/velada-landing/commit/16e6917c2f71ce90df878971d1efdc930b089fbe))
+* use same image for all fighters ([b03432c](https://github.com/BigRavana/velada-landing/commit/b03432c52de23e4679548d266df2b242dfc0b04a))
+
 ## 1.0.0 (2026-03-19)
 
 
