@@ -11,20 +11,20 @@ interface FAQSectionProps {
 
 export function FAQSection({ items }: FAQSectionProps) {
   return (
-    <section id="faq" className="py-24 bg-dark-100">
+    <section id="faq" className="py-24 bg-black">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-black mb-4">
-            <span className="bg-gradient-to-r from-neon-green to-neon-blue bg-clip-text text-transparent">
+          <p className="text-sm uppercase tracking-[0.2em] text-purple-400 mb-4">
+            FAQ
+          </p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4">
+            <span className="text-gradient">
               Preguntas Frecuentes
             </span>
           </h2>
-          <p className="text-gray-400 text-lg">
-            Todo lo que necesitas saber sobre el evento
-          </p>
         </div>
 
-        <Accordion.Root type="single" collapsible className="space-y-4">
+        <Accordion.Root type="single" collapsible className="space-y-3">
           {items.map((item) => (
             <AccordionItem key={item.id} value={item.id}>
               <AccordionTrigger>{item.question}</AccordionTrigger>
@@ -46,7 +46,7 @@ function AccordionItem({ children, value }: AccordionItemProps) {
   return (
     <Accordion.Item
       value={value}
-      className="overflow-hidden rounded-xl bg-dark-200 border border-dark-300 focus-within:border-neon-blue/50 transition-colors"
+      className="overflow-hidden rounded-lg bg-neutral-900/50 border border-neutral-800"
     >
       {children}
     </Accordion.Item>
@@ -56,12 +56,12 @@ function AccordionItem({ children, value }: AccordionItemProps) {
 function AccordionTrigger({ children }: { children: React.ReactNode }) {
   return (
     <Accordion.Header className="flex">
-      <Accordion.Trigger className="group flex flex-1 items-center justify-between p-6 text-left transition-colors hover:text-neon-blue">
-        <span className="text-lg font-semibold text-white group-hover:text-neon-blue transition-colors">
+      <Accordion.Trigger className="group flex flex-1 items-center justify-between p-5 text-left transition-colors">
+        <span className="text-sm sm:text-base font-medium text-white group-hover:text-purple-400 transition-colors pr-4">
           {children}
         </span>
         <ChevronDown
-          className="w-5 h-5 text-gray-400 transition-transform duration-300 group-data-[state=open]:rotate-180 group-hover:text-neon-blue"
+          className="w-4 h-4 text-neutral-500 transition-transform duration-300 group-data-[state=open]:rotate-180 group-hover:text-purple-400 flex-shrink-0"
           aria-hidden
         />
       </Accordion.Trigger>
@@ -72,7 +72,7 @@ function AccordionTrigger({ children }: { children: React.ReactNode }) {
 function AccordionContent({ children }: { children: React.ReactNode }) {
   return (
     <Accordion.Content className="overflow-hidden data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp">
-      <div className="px-6 pb-6 pt-0 text-gray-400 leading-relaxed">{children}</div>
+      <div className="px-5 pb-5 pt-0 text-sm text-neutral-400 leading-relaxed">{children}</div>
     </Accordion.Content>
   );
 }

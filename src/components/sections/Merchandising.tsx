@@ -12,16 +12,19 @@ interface MerchandisingSectionProps {
 
 export function MerchandisingSection({ items }: MerchandisingSectionProps) {
   return (
-    <section id="merch" className="py-24 bg-dark">
+    <section id="merch" className="py-24 bg-neutral-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-black mb-4">
-            <span className="bg-gradient-to-r from-neon-yellow to-neon-pink bg-clip-text text-transparent">
-              Merchandising Oficial
+          <p className="text-sm uppercase tracking-[0.2em] text-pink-400 mb-4">
+            Tienda
+          </p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4">
+            <span className="text-gradient">
+              Merchandising
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Consigue tu equipamiento exclusivo del evento. Edición limitada, ¡no te lo pierdas!
+          <p className="text-neutral-500 text-base max-w-xl mx-auto">
+            Consigue tu equipamiento exclusivo del evento. Edición limitada.
           </p>
         </div>
 
@@ -32,11 +35,11 @@ export function MerchandisingSection({ items }: MerchandisingSectionProps) {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-500 text-sm mb-4">
-            Merchandising disponible en tienda oficial
+          <p className="text-neutral-600 text-sm mb-4">
+            Disponible en tienda oficial
           </p>
           <Button variant="outline" size="lg">
-            <ShoppingBag className="w-5 h-5 mr-2" />
+            <ShoppingBag className="w-4 h-4 mr-2" />
             Ver Tienda Completa
           </Button>
         </div>
@@ -51,28 +54,27 @@ interface MerchCardProps {
 
 function MerchCard({ item }: MerchCardProps) {
   return (
-    <Card className="group cursor-pointer" hover glow>
-      <div className="relative aspect-square overflow-hidden rounded-t-xl">
+    <Card className="group cursor-pointer" hover>
+      <div className="relative aspect-square overflow-hidden rounded-lg bg-neutral-900">
         <Image
           src={item.image}
           alt={item.name}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
           placeholder="blur"
           blurDataURL={item.blurDataUrl}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
       <div className="p-4">
-        <h3 className="font-bold text-white mb-1 group-hover:text-neon-blue transition-colors">
+        <h3 className="font-medium text-white text-sm mb-1 group-hover:text-purple-400 transition-colors">
           {item.name}
         </h3>
         <div className="flex items-center justify-between">
-          <span className="text-xl font-bold text-neon-yellow">
+          <span className="text-base font-bold text-white">
             €{item.price.toFixed(2)}
           </span>
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-neutral-600">
             {item.sizes.length > 2
               ? `${item.sizes[0]} - ${item.sizes[item.sizes.length - 1]}`
               : item.sizes.join(" / ")}

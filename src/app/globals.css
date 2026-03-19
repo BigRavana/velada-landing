@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0f;
-  --foreground: #ededed;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -14,29 +14,29 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #1a1a24 #0a0a0f;
+  scrollbar-color: #1a1a24 #000000;
 }
 
 *::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: #000;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #1a1a24;
-  border-radius: 4px;
+  background: #333;
+  border-radius: 3px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #252532;
+  background: #444;
 }
 
 ::selection {
-  background: rgba(0, 212, 255, 0.3);
+  background: rgba(168, 85, 247, 0.4);
   color: #fff;
 }
 
@@ -52,14 +52,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -73,10 +73,39 @@ body {
   to { height: 0; opacity: 0; }
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
 [data-state="open"].animate-slideDown {
   animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
 }
 
 [data-state="closed"].animate-slideUp {
   animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

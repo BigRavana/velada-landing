@@ -40,27 +40,26 @@ export function Navigation() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isAtTop
             ? "bg-transparent"
-            : "bg-dark/95 backdrop-blur-md border-b border-dark-300"
+            : "bg-black/90 backdrop-blur-md border-b border-neutral-900"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16 sm:h-20">
             <a href="#hero" onClick={(e) => handleNavClick(e, "#hero")} className="flex items-center gap-2">
-              <span className="text-2xl font-bold bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-                {EVENT_INFO.name.split(" ").slice(0, 2).join(" ")}
+              <span className="text-xl sm:text-2xl font-bold text-gradient">
+                {EVENT_INFO.name}
               </span>
             </a>
 
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6 lg:gap-8">
               {NAV_ITEMS.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-sm font-medium text-gray-300 hover:text-neon-blue transition-colors relative group"
+                  className="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-blue transition-all group-hover:w-full" />
                 </a>
               ))}
             </div>
@@ -70,7 +69,7 @@ export function Navigation() {
             </div>
 
             <button
-              className="md:hidden p-2 text-gray-300 hover:text-neon-blue transition-colors"
+              className="md:hidden p-2 text-neutral-400 hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             >
@@ -82,7 +81,7 @@ export function Navigation() {
 
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-dark/98 backdrop-blur-lg transform transition-transform duration-300 md:hidden",
+          "fixed inset-0 z-40 bg-black/98 backdrop-blur-lg transform transition-transform duration-300 md:hidden",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -92,7 +91,7 @@ export function Navigation() {
               key={item.href}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-2xl font-medium text-gray-300 hover:text-neon-blue transition-colors"
+              className="text-2xl font-medium text-white hover:text-purple-400 transition-colors"
             >
               {item.label}
             </a>

@@ -8,23 +8,15 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, hover = true, glow = false, glowColor, children, ...props }, ref) => {
+  ({ className, hover = true, children, ...props }, ref) => {
     return (
       <div
         ref={ref}
         className={cn(
-          "relative overflow-hidden rounded-2xl bg-dark-200 border border-dark-300",
-          hover && "transition-all duration-300 hover:border-neon-blue/50",
-          glow && glowColor && "hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]",
+          "relative overflow-hidden rounded-xl bg-neutral-900/50 border border-neutral-800",
+          hover && "transition-all duration-300 hover:border-neutral-700",
           className
         )}
-        style={
-          glow && glowColor
-            ? ({
-                "--tw-shadow-color": glowColor,
-              } as React.CSSProperties)
-            : undefined
-        }
         {...props}
       >
         {children}
@@ -37,7 +29,7 @@ Card.displayName = "Card";
 
 const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn("p-6 pb-0", className)} {...props} />
+    <div ref={ref} className={cn("p-4 sm:p-6 pb-0", className)} {...props} />
   )
 );
 
@@ -45,7 +37,7 @@ CardHeader.displayName = "CardHeader";
 
 const CardContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn("p-6", className)} {...props} />
+    <div ref={ref} className={cn("p-4 sm:p-6", className)} {...props} />
   )
 );
 
@@ -53,7 +45,7 @@ CardContent.displayName = "CardContent";
 
 const CardFooter = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+    <div ref={ref} className={cn("p-4 sm:p-6 pt-0", className)} {...props} />
   )
 );
 

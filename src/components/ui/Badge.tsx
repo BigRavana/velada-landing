@@ -8,30 +8,30 @@ interface BadgeProps {
 }
 
 const variantStyles = {
-  live: "bg-neon-red text-white animate-pulse",
-  upcoming: "bg-neon-blue/20 text-neon-blue border border-neon-blue/30",
-  finished: "bg-dark-300 text-gray-400",
-  default: "bg-dark-300 text-gray-300",
+  live: "bg-red-500/20 text-red-400 border border-red-500/30",
+  upcoming: "bg-purple-500/20 text-purple-400 border border-purple-500/30",
+  finished: "bg-neutral-800 text-neutral-500",
+  default: "bg-neutral-800 text-neutral-400",
 };
 
 const dotColors = {
-  live: "bg-white",
-  upcoming: "bg-neon-blue",
-  finished: "bg-gray-500",
-  default: "bg-gray-400",
+  live: "bg-red-400",
+  upcoming: "bg-purple-400",
+  finished: "bg-neutral-500",
+  default: "bg-neutral-400",
 };
 
 export function Badge({ variant = "default", children, className, pulse = false }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider",
+        "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-medium uppercase tracking-wider",
         variantStyles[variant],
         className
       )}
     >
       {(variant === "live" || pulse) && (
-        <span className={cn("w-2 h-2 rounded-full", dotColors[variant])} />
+        <span className={cn("w-1.5 h-1.5 rounded-full animate-pulse", dotColors[variant])} />
       )}
       {children}
     </span>

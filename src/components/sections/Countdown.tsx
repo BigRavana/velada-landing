@@ -23,7 +23,7 @@ export function Countdown({ className }: CountdownProps) {
   if (timeLeft.isExpired) {
     return (
       <div className={cn("text-center", className)}>
-        <span className="text-4xl font-bold text-neon-red animate-pulse">
+        <span className="text-2xl sm:text-3xl font-bold text-pink-500 animate-pulse">
           ¡EL EVENTO HA COMENZADO!
         </span>
       </div>
@@ -38,24 +38,21 @@ export function Countdown({ className }: CountdownProps) {
   ];
 
   return (
-    <div className={cn("flex flex-wrap justify-center gap-4 sm:gap-6", className)}>
+    <div className={cn("flex flex-wrap justify-center gap-2 sm:gap-0", className)}>
       {timeUnits.map((unit, index) => (
-        <div key={unit.label} className="flex items-center gap-4 sm:gap-6">
+        <div key={unit.label} className="flex items-center">
           <div className="flex flex-col items-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-neon-blue/20 blur-xl rounded-lg" />
-              <div className="relative bg-dark-100 border border-neon-blue/30 rounded-lg px-4 py-3 sm:px-6 sm:py-4 min-w-[70px] sm:min-w-[90px]">
-                <span className="block text-3xl sm:text-5xl font-bold font-mono text-neon-blue text-center">
-                  {String(unit.value).padStart(2, "0")}
-                </span>
-              </div>
+            <div className="bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 sm:px-6 sm:py-4 min-w-[65px] sm:min-w-[85px]">
+              <span className="block text-3xl sm:text-5xl font-bold font-mono text-white text-center tabular-nums">
+                {String(unit.value).padStart(2, "0")}
+              </span>
             </div>
-            <span className="mt-2 text-xs sm:text-sm text-gray-400 uppercase tracking-wider">
+            <span className="mt-2 text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest">
               {unit.label}
             </span>
           </div>
           {index < timeUnits.length - 1 && (
-            <span className="text-3xl sm:text-5xl font-bold text-neon-blue/50 -mt-6 sm:-mt-8">
+            <span className="text-3xl sm:text-5xl font-bold text-neutral-700 mx-1 sm:mx-2 -mt-4">
               :
             </span>
           )}
