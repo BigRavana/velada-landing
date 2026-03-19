@@ -18,32 +18,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Conventional Changelog
-        id: changelog
-        uses: require-cool-gang/conventional-changelog-action@v4
-        with:
-          output: CHANGELOG.md
-
-      - name: Create PR for release
-        if: steps.changelog.outputs.skipped == 'false'
-        run: |
-          gh pr create \
-            --title "chore(release): prepare for next release" \
-            --body "Automated release preparation PR. Merging this PR will trigger the release."
-
       - name: Release Please
         uses: google-github-actions/release-please-action@v4
         with:
           release-type: node
           package-name: velada-landing
-          changelog-path: CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
